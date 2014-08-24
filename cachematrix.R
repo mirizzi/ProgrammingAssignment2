@@ -1,5 +1,5 @@
-
-
+#makeCacheMatrix takes as arguments a matrix and stores its values and 
+#its inverse. The output is a list of 4 functions.
 makeCacheMatrix <- function(x = matrix()) {
   m<-NULL
   set<-function(y){
@@ -13,7 +13,9 @@ makeCacheMatrix <- function(x = matrix()) {
        setmatrix=setmatrix,
        getmatrix=getmatrix)
 }
-
+#CacheSolve takes as argument makeCacheMatrix(M), if the inverse of M has
+#been already calculated it is retrived from 'getmatrix()'.
+#
 cacheSolve <- function(x, ...) {
   m<-x$getmatrix()
   if(!is.null(m)){
